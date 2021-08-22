@@ -6,12 +6,24 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        Auth.auth().signInAnonymously(completion: nil)
+        
+        
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if let user = user {
+                print("Wellcom:\(user.displayName)")
+            }else{
+                print("SignOut")
+            }
+        }
+        
+        
     }
 
 
