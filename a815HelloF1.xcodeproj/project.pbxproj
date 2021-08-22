@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -58,7 +58,6 @@
 				7D2A890A75096430B6E07E17 /* Pods-a815HelloF1.debug.xcconfig */,
 				DDD901894D4B6DF9D52E2942 /* Pods-a815HelloF1.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

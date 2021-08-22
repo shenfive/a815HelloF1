@@ -7,21 +7,14 @@
 
 import UIKit
 import FirebaseAuth
+import GoogleSignIn
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var gSignButton: GIDSignInButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        Auth.auth().signInAnonymously(completion: nil)
-        
-        
-        Auth.auth().addStateDidChangeListener { auth, user in
-            if let user = user {
-                print("Wellcom:\(user.displayName)")
-            }else{
-                print("SignOut")
-            }
-        }
+
         
         
     }
