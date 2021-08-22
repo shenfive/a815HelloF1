@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var gSignButton: GIDSignInButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
       
         
@@ -24,7 +23,16 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-       
+
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if let user = user{
+                print("Sign in with:\(user.displayName)")
+            }else{
+                print("Sign in with:Fail")
+            }
+        }
+        
+        
     }
     
     
@@ -58,6 +66,25 @@ class ViewController: UIViewController {
                                                          accessToken: authentication.accessToken)
 
           // ...
+            
+            print(credential)
+            print("xxxxxx")
+            
+            
+            Auth.auth().signIn(with: credential) { authResult, error in
+                if let error = error {
+            
+                  // ...
+                  return
+                }else{
+                    
+                }
+                // User is signed in
+                // ...
+            }
+            
+            
+            
         }
     }
     
